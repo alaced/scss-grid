@@ -1,0 +1,28 @@
+$minMobile: 320px;
+$maxMobile: 600px;
+$minTablet: 600px;
+$maxTablet: 840px;
+$minScreen: 840px;
+$maxScreen: 1200px;
+$minMax: 1200px;
+$maxMax: 3000px;
+
+@mixin responsive($device) {
+  @if $device == "mobile" {
+    @media screen and (min-width: $minMobile) and (max-width: $maxMobile) {
+      @content;
+    }
+  } @else if $device == "tablet" {
+    @media screen and (min-width: $minTablet) and (max-width: $maxTablet) {
+      @content;
+    }
+  } @else if $device == "web" {
+    @media screen and (min-width: $minScreen) and (max-width: $maxScreen) {
+      @content;
+    }
+  } @else if $device == "web-max" {
+    @media screen and (min-width: $minMax) and (max-width: $maxMax) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,198 @@
+@import "_variables";
+@import "_mixins";
+@import "_reset.scss";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+body {
+  background-color: $bg-white;
+  font-size: 1.1rem;
+  color: $bg-red;
+  font-family: "Lato", sans-serif;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  grid-template-rows: 100vh auto;
+  @include responsive("mobile") {
+    grid-template:
+      "header" 625px
+      "main" auto / 100%;
+  }
+  @include responsive("tablet") {
+    grid-template:
+      "header" 100vh
+      "main" auto / 100%;
+  }
+  @include responsive("web-max") {
+    grid-template-columns: 600px 1fr;
+  }
+}
+
+.description {
+  padding: 5rem 4.2rem 2rem 4.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 400;
+  @include responsive("mobile") {
+    grid-area: header;
+    padding: 5rem 2rem 1rem 2rem;
+  }
+  @include responsive("tablet") {
+    grid-area: header;
+  }
+  .main__title {
+    font-family: "Quicksand", sans-serif;
+    font-size: 3rem;
+    text-align: left;
+    margin-bottom: 3rem;
+    transform: scaleX(1.1);
+    transform-origin: 0 0;
+    letter-spacing: 5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    @include responsive("mobile") {
+      font-size: 3.2rem;
+      padding-right: 30%;
+    }
+    @include responsive("tablet") {
+      font-size: 4.5rem;
+      padding-right: 30%;
+      margin-bottom: 5rem;
+    }
+    @include responsive("web-max") {
+      font-size: 4.8rem;
+    }
+  }
+  .content__intro {
+    font-size: 1.4rem;
+    padding: 1.2rem 0;
+    line-height: 2rem;
+    text-align: left;
+  }
+  .content__desc {
+    text-align: justify;
+    font-stretch: expanded;
+    line-height: 1.5rem;
+    font-size: 0.98rem;
+  }
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1px;
+  li {
+    font-size: 0.95rem;
+    padding: 7px 3px 3px 3px;
+    color: $nav-color;
+    border-bottom: 1.5px solid grey;
+    max-width: fit-content;
+    margin: 5px 8px 0px 8px;
+    &:hover {
+      color: black;
+      border-bottom: 1.5px solid black;
+      cursor: pointer;
+    }
+  }
+}
+
+.movie-lists {
+  overflow: auto;
+  background-color: $bg-red;
+  color: $bg-white;
+  display: grid;
+  @include responsive("mobile") {
+    grid-area: main;
+  }
+  @include responsive("tablet") {
+    grid-area: main;
+  }
+  .movie__content {
+    padding: 1rem 2rem 2rem 2rem;
+    // border: 1px solid black;
+    background-image: linear-gradient(
+      to bottom,
+      #d54136,
+      #d94337,
+      #de4439,
+      #e2463a,
+      $bg-red
+    );
+    height: 450px;
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-columns: auto auto;
+    gap: 0.5rem;
+    @include responsive("mobile") {
+      padding: 1rem 2rem 2rem 2rem;
+      grid-template:
+        "title" 0.7fr
+        "director" 0.3fr
+        "video" 5fr
+        "votes" 1fr / auto;
+    }
+    @include responsive("tablet") {
+      padding: 3rem 4.2rem 2rem 4.2rem;
+    }
+    .movie-title {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      font-size: 1.4rem;
+      align-self: end;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      @include responsive("mobile") {
+        grid-area: title;
+        margin-bottom: 0px;
+        font-size: 1.1rem;
+      }
+    }
+    .movie-director {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      font-size: 0.85rem;
+      place-self: end right;
+      text-align: end;
+      margin-bottom: 10px;
+      @include responsive("mobile") {
+        grid-area: director;
+        place-self: center left;
+      }
+    }
+    .video {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+      box-shadow: 0 80px 80px -80px #000, 0 0 8px rgba(0, 0, 0, 0.06),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+      @include responsive("mobile") {
+        grid-area: video;
+      }
+    }
+    .votes {
+      grid-column: 1 / 3;
+      grid-row: 3 / 4;
+      display: flex;
+      align-items: center;
+      justify-self: end;
+      font-size: 0.9rem;
+      @include responsive("mobile") {
+        grid-area: votes;
+      }
+      i {
+        padding: 0.4rem 0rem 0.4rem 0.8rem;
+        padding-bottom: 0.8rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      .fa-thumbs-down {
+        padding-top: 0.2rem;
+      }
+    }
+  }
+}
