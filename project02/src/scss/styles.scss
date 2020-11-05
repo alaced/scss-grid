@@ -1,0 +1,531 @@
+@import "_reset.scss";
+@import "_variables";
+@import "_mixins";
+@import "_responsive-mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://use.typekit.net/cyr0xpl.css");
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input {
+  all: unset;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  padding-top: 70px;
+}
+
+.shrinkHeader {
+  padding: 10px 50px;
+}
+
+.shrinkImg {
+  width: 58px;
+  height: 58px;
+}
+
+.header {
+  @include main-font;
+  padding: 15px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  font-size: 12px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  @include responsive("max") {
+    padding: 10px 140px;
+  }
+  img {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+  }
+  div {
+    padding: 10px 0px 10px 0px;
+  }
+  .header__column {
+    display: flex;
+    width: 33%;
+  }
+  .header__column:last-child {
+    justify-content: flex-end;
+  }
+  .button {
+    padding: 10px 30px 10px 0px;
+  }
+  .journal {
+    padding: 10px 0px 10px 30px;
+  }
+  i {
+    padding-right: 12px;
+  }
+}
+
+main {
+  padding: 70px 0px;
+  width: 100%;
+  @include responsive("mobToWeb") {
+    padding: 0px;
+    margin-top: 30px;
+  }
+
+  .banner {
+    @include sub-font;
+    color: white;
+    position: relative;
+    padding: 0px 50px;
+    margin-bottom: 40px;
+    img {
+      width: 100%;
+    }
+    @include banner-css(white, $main-black);
+    @include responsive("mobNtab") {
+      padding: 0px;
+      margin-bottom: 40px;
+      position: static;
+      @include banner-css($main-black, white);
+    }
+    @include responsive("web01") {
+      padding: 0px;
+      margin-bottom: 40px;
+    }
+    @include responsive("max") {
+      padding: 40px 140px;
+    }
+  }
+  .studio {
+    padding: 40px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    @include card-css;
+    .card__title {
+      font-weight: 600 !important;
+      font-size: 12px !important;
+    }
+    @include responsive("mobToWeb") {
+      padding: 40px 0px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+    @include responsive("max") {
+      padding: 40px 140px;
+    }
+    button {
+      margin-top: 50px;
+      border: 1px solid black;
+      width: 295px;
+      @include main-font;
+      display: grid;
+      grid-template-columns: 8fr 1fr;
+      align-items: center;
+      @include transition($main-black, white);
+      &:hover {
+        .arrow-btn {
+          border: none;
+          color: $main-black;
+        }
+      }
+      .book-btn {
+        justify-self: flex-start;
+        padding: 10px 25px;
+      }
+      .arrow-btn {
+        border-left: 1px solid $main-black;
+        justify-self: center;
+        font-size: 20px;
+        padding: 15px 20px;
+      }
+    }
+  }
+  .shop {
+    padding: 40px 50px;
+    width: 100%;
+    .shop__header {
+      @include header-css("small");
+    }
+    @include responsive("max") {
+      padding: 40px 140px;
+    }
+    .prod__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      justify-items: center;
+      width: 100%;
+
+      @include responsive("mobNtab") {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+      }
+      .prod__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        img {
+          width: 100%;
+          cursor: pointer;
+          @include responsive("web01") {
+            img {
+              width: fit-content;
+            }
+          }
+        }
+        .prod__desc {
+          @include main-font;
+          width: 100%;
+          .prod__type {
+            color: black;
+            cursor: pointer;
+          }
+          .prod__name {
+            @include sub-font;
+            font-size: 28px;
+            font-style: italic;
+            padding: 10px 0px;
+            cursor: pointer;
+          }
+          .prod__price {
+            padding: 20px 0px;
+            cursor: pointer;
+          }
+          .add-cart {
+            margin-top: 15px;
+            // padding: 22px 77px;
+            padding: 7% 23%;
+            border: 1px solid black;
+            color: black;
+            @include responsive("tablet") {
+              padding: 4% 35%;
+            }
+            &:hover {
+              background-color: $main-black;
+              color: white;
+              transition: 0.3s ease-in-out;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  .gift {
+    @include sub-font;
+    color: white;
+    position: relative;
+    padding: 40px 50px;
+    img {
+      width: 100%;
+    }
+    @include responsive("mobToWeb") {
+      padding: 40px 0px;
+    }
+    @include responsive("max") {
+      padding: 40px 140px;
+    }
+    @include banner-css($main-black, white);
+  }
+  .brand-new {
+    padding: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include responsive("mobNtab") {
+      padding: 40px 25px;
+    }
+    .brand-new__header {
+      @include header-css("big");
+      @include responsive("mobNtab") {
+        @include header-css("small");
+      }
+      text-align: center;
+    }
+    .prod__list {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 100%;
+      padding: 70px 40px;
+      width: 80%;
+      align-items: center;
+      margin: 0px 10%;
+      .prod__item {
+        img {
+          width: 100%;
+        }
+        padding: 15px;
+        justify-items: center;
+        border-left: 1px solid rgba(0, 0, 0, 0.5);
+      }
+      #no-border {
+        border: none;
+      }
+    }
+    button {
+      @include main-font;
+      margin-top: 15px;
+      padding: 22px 77px;
+      border: 1px solid black;
+      color: black;
+      @include transition($main-black, white);
+    }
+  }
+  .brand-story {
+    padding: 40px 50px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-self: center;
+    @include card-css;
+    @include responsive("mobToWeb") {
+      padding: 50px 0px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      .order:nth-of-type(3) {
+        order: 3;
+      }
+      .order:nth-of-type(4) {
+        order: 2;
+      }
+      .order:nth-of-type(5) {
+        order: 4;
+      }
+      .order:nth-of-type(6) {
+        order: 5;
+      }
+    }
+    @include responsive("web01") {
+      padding: 40px 50px;
+    }
+    @include responsive("max") {
+      padding: 40px 140px;
+    }
+    .card__content .card__title {
+      @include sub-font;
+      font-size: 14px;
+    }
+    .card__btn {
+      @include main-font;
+      padding-top: 6%;
+      @include responsive("tablet") {
+        padding-top: 4%;
+      }
+      @include responsive("web01") {
+        padding-top: 3%;
+      }
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      div {
+        display: flex;
+        align-items: center;
+      }
+      &:hover {
+        i {
+          transform: translateX(5px);
+          transition: transform 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+      }
+      i {
+        font-size: 15px;
+        padding: 3px 3px 4px 10px;
+      }
+    }
+  }
+  .subscription {
+    padding: 40px 50px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .subscription__header {
+      @include header-css("big");
+      text-align: center;
+      @include responsive("mobNtab") {
+        @include header-css("small");
+      }
+      .header__desc {
+        max-width: 700px;
+        @include responsive("mobNtab") {
+          max-width: none;
+          padding: 0px 25px;
+        }
+        @include responsive("web01") {
+          max-width: none;
+          padding: 0px 45px;
+        }
+      }
+    }
+    @include responsive("mobNtab") {
+      padding: 40px 0px;
+    }
+    form {
+      margin-top: 70px;
+      width: 700px;
+      @include responsive("mobToWeb") {
+        width: 90%;
+      }
+    }
+    input {
+      border-bottom: 1px solid black;
+      padding: 20px 60px 20px 0px;
+      font-size: 30px;
+      width: 90%;
+      @include responsive("mobToWeb") {
+        padding: 20px 0px;
+        width: 100%;
+        font-size: 25px;
+      }
+    }
+    input::placeholder {
+      font-weight: 100;
+      font-size: 35px;
+      color: rgba(0, 0, 0, 0.3);
+      @include responsive("mobToWeb") {
+        font-size: 25px;
+      }
+    }
+    .buttonIn {
+      @include responsive("mobToWeb") {
+        position: relative;
+        padding: 0px 10px;
+      }
+    }
+    button {
+      margin-left: -53px;
+      margin-bottom: 10px;
+      border: 1px solid black;
+      padding: 14px 16px;
+      cursor: pointer;
+      transform: translateY(-10px);
+      @include responsive("mobToWeb") {
+        transform: translateY(0px);
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        padding: 12px 13px;
+      }
+    }
+  }
+  .concept-photo {
+    display: grid;
+    padding: 40px 50px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    @include responsive("mobNtab") {
+      padding: 40px 0px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+    @include responsive("web01") {
+      padding: 40px 0px;
+    }
+    @include responsive("max") {
+      padding: 40px 140px;
+    }
+    div {
+      width: 100%;
+      height: 100%;
+      &:hover {
+        opacity: 0.5;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .follow {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    @include sub-font;
+    font-size: 38px;
+    @include responsive("mobNtab") {
+      font-size: 20px;
+      display: none;
+    }
+  }
+}
+
+nav {
+  @include main-font;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 260px;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: $beige;
+  padding: 0px 50px;
+  margin-top: 50px;
+  @include responsive("mobNtab") {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  @include responsive("mobNtab") {
+    .nav__column {
+      padding: 35px;
+    }
+    .nav__column:nth-of-type(1) {
+      order: 1;
+    }
+    .nav__column:nth-of-type(2) {
+      order: 0;
+    }
+    .nav__column:nth-of-type(3) {
+      order: 2;
+    }
+  }
+  .nav__column:nth-child(2) {
+    padding: 0px 32%;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    @include responsive("mobNtab") {
+      border: none;
+      padding: 35px 40%;
+    }
+  }
+  @include responsive("mobNtab") {
+    .nav__column:first-child {
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      padding: 35px 30%;
+    }
+  }
+  .nav__title {
+    margin-bottom: 25px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .nav__list {
+    padding: 7px 0px;
+    width: max-content;
+    margin: auto;
+  }
+}
+
+.italic {
+  @include italic-font;
+}
+
+.transparent {
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  &:before {
+    content: "\00a0";
+  }
+}
