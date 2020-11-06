@@ -4,21 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dist/css/styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    s
     <title>Paint Box</title>
   </head>
   <body>
-    <div class="header header-js">
+    <div class="header js-header">
       <div class="header__column">
-        <div class="button">Nail Studio</div>
-        <div class="button">Shop Polish</div>
+        <div class="button studioBtn">Nail Studio</div>
+        <div class="button shopBtn">Shop Polish</div>
       </div>
-      <img
-        class="header__column logo"
-        src="https://cdn.shopify.com/s/files/1/0086/4865/4895/t/2/assets/safari-pinned-tab.svg?v=3469146780015845152%22%20color=%22#000000%22"
-      />
+      <div class="header__column logo">
+        <img
+          class="header__column"
+          src="https://cdn.shopify.com/s/files/1/0086/4865/4895/t/2/assets/safari-pinned-tab.svg?v=3469146780015845152%22%20color=%22#000000%22"
+        />
+      </div>
       <div class="header__column">
-        <div class="button">Journal</div>
-        <div><i class="fas fa-shopping-cart"></i>0</div>
+        <div class="button js-journal">Journal</div>
+        <div class="cart"><i class="fas fa-shopping-bag"></i>3</div>
       </div>
     </div>
     <main>
@@ -38,7 +42,7 @@
           <button class="banner__btn">Nail Your Look</button>
         </div>
       </div>
-      <div class="studio">
+      <div class="studio" data-aos="fade-in" data-aos-duration="1000">
         <div class="card__image">
           <img
             src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/PAINTBOX-UES_0030_93651217-57d7-4f10-8891-86c2dbf637bb_1280x1280_crop_center.jpeg?v=1592966195"
@@ -58,7 +62,7 @@
           </button>
         </div>
       </div>
-      <div class="shop">
+      <div class="shop" data-aos="fade-in" data-aos-duration="1000">
         <div class="shop__header">
           <div class="header__title">The Shop</div>
           <div class="header__desc">Our Newest Polish Colors</div>
@@ -105,7 +109,7 @@
           </div>
         </div>
       </div>
-      <div class="gift">
+      <div class="gift" data-aos="fade-in" data-aos-duration="1500">
         <div class="banner__img">
           <img
             src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/IMG_3566_65a3b457-7a2f-474d-81c1-56eec598fcdd_1920x1115_crop_center.jpg?v=1561045055"
@@ -121,7 +125,7 @@
           <button class="banner__btn">Get Gifting</button>
         </div>
       </div>
-      <div class="brand-new">
+      <div class="brand-new" data-aos="fade-in" data-aos-duration="1500">
         <div class="brand-new__header">
           <div class="header__title">Newest Power Couple</div>
           <div class="header__desc">
@@ -190,36 +194,60 @@
         <button class="new-btn">New and Now</button>
       </div>
       <div class="brand-story">
-        <div class="card__image order">
+        <div
+          class="card__image order"
+          data-aos="fade-in"
+          data-aos-duration="1500"
+        >
           <img
             src="https://cdn.shopify.com/s/files/1/0086/4865/4895/articles/DSC_0021_1_2880x1940_crop_center.jpg?v=1602015314"
           />
         </div>
-        <div class="card__content order">
+        <div
+          class="card__content order"
+          data-aos="fade-in"
+          data-aos-duration="1500"
+        >
           <div class="card__title">Oct 26, 2020</div>
           <div class="card__desc">Nails of New York: Olivia Landau</div>
           <button class="card__btn">
             <div>Read Story<i class="fas fa-arrow-right"></i></div>
           </button>
         </div>
-        <div class="card__content order">
+        <div
+          class="card__content order"
+          data-aos="fade-in"
+          data-aos-duration="1500"
+        >
           <div class="card__title">Oct 14, 2020</div>
           <div class="card__desc">Color Theory: Discover Like Wild</div>
           <button class="card__btn">
             <div>Read Story<i class="fas fa-arrow-right"></i></div>
           </button>
         </div>
-        <div class="card__image order">
+        <div
+          class="card__image order"
+          data-aos="fade-in"
+          data-aos-duration="1500"
+        >
           <img
             src="https://cdn.shopify.com/s/files/1/0086/4865/4895/articles/Two_by_two_collage_2_2880x1940_crop_center.jpg?v=1601934852"
           />
         </div>
-        <div class="card__image order">
+        <div
+          class="card__image order"
+          data-aos="fade-in"
+          data-aos-duration="1500"
+        >
           <img
             src="https://cdn.shopify.com/s/files/1/0086/4865/4895/articles/200106_paintbox_1770_2880x1940_crop_center.jpeg?v=1598528574"
           />
         </div>
-        <div class="card__content order">
+        <div
+          class="card__content order"
+          data-aos="fade-in"
+          data-aos-duration="1500"
+        >
           <div class="card__title">Oct 25, 2020</div>
           <div class="card__desc">
             New and Now: Fall–Winter 2020 Lookbook Collection
@@ -229,7 +257,7 @@
           </button>
         </div>
       </div>
-      <div class="subscription">
+      <div class="subscription" data-aos="fade-in" data-aos-duration="1500">
         <div class="subscription__header">
           <div class="header__title">Join Our Conversation</div>
           <div class="header__desc">
@@ -246,7 +274,7 @@
           </div>
         </form>
       </div>
-      <div class="concept-photo">
+      <div class="concept-photo" data-aos="fade-in" data-aos-duration="1500">
         <div class="instagram-photo">
           <img
             src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/008_f87d7cc1-2d13-4915-a8f7-ae5591f53233_480x480_crop_top.jpeg?v=1600129028"
@@ -319,6 +347,11 @@
       src="https://kit.fontawesome.com/841cfaa0da.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="index.js"></script>
   </body>
 </html>
