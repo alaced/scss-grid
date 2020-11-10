@@ -141,7 +141,7 @@ main {
       margin-bottom: 40px;
     }
     @include responsive("max") {
-      padding: 20px 140px 0px 140px;
+      padding: 0px 140px 0px 140px;
     }
   }
   .studio {
