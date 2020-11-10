@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dist/css/styles.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <title>Paint Box</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>PaintBox</title>
   </head>
   <body>
     <div class="header js-header">
@@ -14,10 +20,7 @@
         <div class="button shopBtn">Shop Polish</div>
       </div>
       <div class="header__column logo">
-        <img
-          class="header__column"
-          src="https://cdn.shopify.com/s/files/1/0086/4865/4895/t/2/assets/safari-pinned-tab.svg?v=3469146780015845152%22%20color=%22#000000%22"
-        />
+        <img class="header__column" src="images/logo.svg" />
       </div>
       <div class="header__column">
         <div class="button js-journal">Journal</div>
@@ -27,25 +30,21 @@
     <main>
       <div class="banner">
         <div class="banner__img">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/200106_paintbox_1770_1280x743_crop_center.jpeg?v=1601058548"
-          />
+          <img src="images/banner02.webp" />
         </div>
         <div class="banner__content">
           <div class="banner__title">New Nail designs</div>
           <div class="banner__desc">
-            New
-            <span class="italic">Fall–Winter 2020 Studio Lookbook</span> designs
-            launch now. Meet modern, graphic manicures.
+            <span class="italic">Like Gilded + Like Velvet</span> is our
+            high-low take on holiday that feels right for both staying in and
+            stepping out.
           </div>
-          <button class="banner__btn">Nail Your Look</button>
+          <button class="banner__btn">Shop Power Couple</button>
         </div>
       </div>
       <div class="studio" data-aos="fade-in" data-aos-duration="1000">
         <div class="card__image">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/PAINTBOX-UES_0030_93651217-57d7-4f10-8891-86c2dbf637bb_1280x1280_crop_center.jpeg?v=1592966195"
-          />
+          <img src="images/studio.webp" />
         </div>
         <div class="card__content">
           <div class="card__title">Our Studios</div>
@@ -66,53 +65,61 @@
           <div class="header__title">The Shop</div>
           <div class="header__desc">Our Newest Polish Colors</div>
         </div>
-        <div class="prod__list">
-          <div class="prod__item">
-            <div>
-              <img
-                src="https://cdn.shopify.com/s/files/1/0086/4865/4895/products/FW20Bottles_640x800_crop_center.png?v=1600137560"
-              />
+        <div
+          id="carouselExampleCaptions"
+          class="carousel"
+          data-ride="carousel"
+          data-interval="false"
+        >
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExampleCaptions"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          </ol>
+          <div class="prod__list">
+            <div class="prod__item active">
+              <div>
+                <img class="prod__img01" src="images/shop04.webp" />
+              </div>
+              <div class="prod__desc">
+                <div class="prod__type">Power Couple</div>
+                <div class="prod__name">Like Gilded + Like Velvet</div>
+                <div class="prod__price">$40.00</div>
+                <button class="add-cart">Add To Cart</button>
+              </div>
             </div>
-            <div class="prod__desc">
-              <div class="prod__type">Power Couple</div>
-              <div class="prod__name">Like Camel + Like Midnight</div>
-              <div class="prod__price">$40.00</div>
-              <button class="add-cart">Add To Cart</button>
+            <div class="prod__item">
+              <div>
+                <img class="prod__img02" src="images/shop05.webp" />
+              </div>
+              <div class="prod__desc">
+                <div class="prod__type">Power Couple</div>
+                <div class="prod__name">Like Glass + Like Fog</div>
+                <div class="prod__price">$40.00</div>
+                <button class="add-cart">Add To Cart</button>
+              </div>
             </div>
-          </div>
-          <div class="prod__item">
-            <div>
-              <img
-                src="https://cdn.shopify.com/s/files/1/0086/4865/4895/products/FINALFW20Bottles_640x800_crop_center.png?v=1601066936"
-              />
-            </div>
-            <div class="prod__desc">
-              <div class="prod__type">Power Couple</div>
-              <div class="prod__name">Like Lilac + Like Muse</div>
-              <div class="prod__price">$40.00</div>
-              <button class="add-cart">Add To Cart</button>
-            </div>
-          </div>
-          <div class="prod__item">
-            <div>
-              <img
-                src="https://cdn.shopify.com/s/files/1/0086/4865/4895/products/SS20POWERCOUPLE_640x800_crop_center.png?v=1585835776"
-              />
-            </div>
-            <div class="prod__desc">
-              <div class="prod__type">Power Couple</div>
-              <div class="prod__name">Like Lush + Like Flora</div>
-              <div class="prod__price">$40.00</div>
-              <button class="add-cart">Add To Cart</button>
+            <div class="prod__item">
+              <div>
+                <img class="prod__img03" src="images/shop06.webp" />
+              </div>
+              <div class="prod__desc">
+                <div class="prod__type">Power Couple</div>
+                <div class="prod__name">Like Mystery + Like Maigic</div>
+                <div class="prod__price">$40.00</div>
+                <button class="add-cart">Add To Cart</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="gift" data-aos="fade-in" data-aos-duration="1500">
         <div class="banner__img">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/IMG_3566_65a3b457-7a2f-474d-81c1-56eec598fcdd_1920x1115_crop_center.jpg?v=1561045055"
-          />
+          <img src="images/gift.webp" />
         </div>
         <div class="banner__content">
           <div class="banner__title">Gift Card</div>
@@ -126,67 +133,41 @@
       </div>
       <div class="brand-new" data-aos="fade-in" data-aos-duration="1500">
         <div class="brand-new__header">
-          <div class="header__title">Newest Power Couple</div>
+          <div class="header__title">Inspiration</div>
           <div class="header__desc">
-            FW20 Power Couple:
-            <span class="italic">Like Camel + Like Midnight</span>
+            How to use it:
+            <span class="italic">Like Gilded + Like Velvet</span>
           </div>
         </div>
-        <div class="prod__list">
-          <div class="prod__item" id="no-border">
+        <div class="new__list">
+          <div class="new__item" id="no-border">
             <div>
-              <img
-                src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/TIp6_6d8d6a5d-ee7c-4c94-acbc-31d08fae47d5_200x255_crop_center.png?v=1600135800"
-              />
+              <img src="images/Tip1.webp" />
             </div>
           </div>
-          <div class="prod__item">
+          <div class="new__item">
             <div>
-              <img
-                src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/Tip8_a136f582-2e0b-4499-a447-a26f12e7e0a6_200x255_crop_center.png?v=1600135815"
-              />
+              <img src="images/Tip2.webp" />
             </div>
           </div>
-          <div class="prod__item">
+          <div class="new__item">
             <div>
-              <img
-                src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/Tip4_04fdef50-eb7c-4d56-a6bf-8602bc00ea6c_200x255_crop_center.png?v=1600135827"
-              />
+              <img src="images/Tip3.webp" />
             </div>
           </div>
-          <div class="prod__item">
+          <div class="new__item">
             <div>
-              <img
-                src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/Tip5_38ed7e2d-b79a-4334-8796-686f6ae28007_200x255_crop_center.png?v=1600135837"
-              />
+              <img src="images/Tip4.webp" />
             </div>
           </div>
-          <div class="prod__item">
+          <div class="new__item">
             <div>
-              <img
-                src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/Tip7_c0bd906b-122e-4d52-8a3c-0d009279e5f7_200x255_crop_center.png?v=1600135849"
-              />
+              <img src="images/Tip5.webp" />
             </div>
           </div>
-          <div class="prod__item">
+          <div class="new__item">
             <div>
-              <img
-                src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/Tip3_fdf6f740-381a-4a30-8913-d3b79a994d96_200x255_crop_center.png?v=1600135861"
-              />
-            </div>
-          </div>
-          <div class="prod__item">
-            <div>
-              <img
-                src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/Tip2_f2493009-9e0a-4a6b-b7b2-ffb72c39b030_200x255_crop_center.png?v=1600135886"
-              />
-            </div>
-          </div>
-          <div class="prod__item">
-            <div>
-              <img
-                src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/TIP1_99156c73-0485-4d4f-bc98-f0538405749d_200x255_crop_center.png?v=1600135874"
-              />
+              <img src="images/Tip6.webp" />
             </div>
           </div>
         </div>
@@ -198,9 +179,18 @@
           data-aos="fade-in"
           data-aos-duration="1500"
         >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/articles/DSC_0021_1_2880x1940_crop_center.jpg?v=1602015314"
-          />
+          <img src="images/story04.webp" />
+        </div>
+        <div
+          class="card__content order"
+          data-aos="fade-in"
+          data-aos-duration="1500"
+        >
+          <div class="card__title">Nov 9, 2020</div>
+          <div class="card__desc">New and Now: Holiday 2020 Power Couple</div>
+          <button class="card__btn">
+            <div>Read Story<i class="fas fa-arrow-right"></i></div>
+          </button>
         </div>
         <div
           class="card__content order"
@@ -214,43 +204,26 @@
           </button>
         </div>
         <div
+          class="card__image order"
+          data-aos="fade-in"
+          data-aos-duration="1500"
+        >
+          <img src="images/story01.webp" />
+        </div>
+        <div
+          class="card__image order"
+          data-aos="fade-in"
+          data-aos-duration="1500"
+        >
+          <img src="images/story02.webp" />
+        </div>
+        <div
           class="card__content order"
           data-aos="fade-in"
           data-aos-duration="1500"
         >
           <div class="card__title">Oct 14, 2020</div>
           <div class="card__desc">Color Theory: Discover Like Wild</div>
-          <button class="card__btn">
-            <div>Read Story<i class="fas fa-arrow-right"></i></div>
-          </button>
-        </div>
-        <div
-          class="card__image order"
-          data-aos="fade-in"
-          data-aos-duration="1500"
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/articles/Two_by_two_collage_2_2880x1940_crop_center.jpg?v=1601934852"
-          />
-        </div>
-        <div
-          class="card__image order"
-          data-aos="fade-in"
-          data-aos-duration="1500"
-        >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/articles/200106_paintbox_1770_2880x1940_crop_center.jpeg?v=1598528574"
-          />
-        </div>
-        <div
-          class="card__content order"
-          data-aos="fade-in"
-          data-aos-duration="1500"
-        >
-          <div class="card__title">Oct 25, 2020</div>
-          <div class="card__desc">
-            New and Now: Fall–Winter 2020 Lookbook Collection
-          </div>
           <button class="card__btn">
             <div>Read Story<i class="fas fa-arrow-right"></i></div>
           </button>
@@ -274,45 +247,31 @@
         </form>
       </div>
       <div class="concept-photo" data-aos="fade-in" data-aos-duration="1500">
-        <div class="instagram-photo">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/008_f87d7cc1-2d13-4915-a8f7-ae5591f53233_480x480_crop_top.jpeg?v=1600129028"
-          />
-        </div>
-        <div class="instagram-photo">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/003_d93fe26e-ff4a-4500-aaf8-fe49d24982eb_480x480_crop_top.jpeg?v=1600129041"
-          />
-        </div>
-        <div class="instagram-photo">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/03_LikeCamelLikeMidnight_0023_3da4ae4c-1522-441d-89a8-b857d94b7534_480x480_crop_top.jpeg?v=1600129057"
-          />
-        </div>
-        <div class="instagram-photo">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/005_32619955-632a-4584-b8e2-9cbbe6e7555b_480x480_crop_top.jpeg?v=1600129079"
-          />
-        </div>
-        <div class="instagram-photo">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/002_afccfa42-4dc4-44b4-9b7b-7b68a75f9cc7_480x480_crop_top.jpeg?v=1600129149"
-          />
-        </div>
-        <div class="instagram-photo">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/010_1137cd0e-236e-4b54-93cc-0b28275d0bd4_480x480_crop_top.jpeg?v=1600129103"
-          />
-        </div>
-        <div class="instagram-photo">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/006_f6613e5a-7c2f-4bb9-9cb4-19a628ecf041_480x480_crop_top.jpeg?v=1600129167"
-          />
-        </div>
-        <div class="instagram-photo">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0086/4865/4895/files/200106_paintbox_2669_de9765a0-3187-4395-822d-ed547c9e43b9_480x480_crop_top.jpeg?v=1600129180"
-          />
+        <div class="insta">
+          <div class="instagram-photo">
+            <img src="images/insta01.webp" />
+          </div>
+          <div class="instagram-photo">
+            <img src="images/insta02.webp" />
+          </div>
+          <div class="instagram-photo">
+            <img src="images/insta03.webp" />
+          </div>
+          <div class="instagram-photo">
+            <img src="images/insta04.jpg" />
+          </div>
+          <div class="instagram-photo">
+            <img src="images/insta05.webp" />
+          </div>
+          <div class="instagram-photo">
+            <img src="images/insta06.webp" />
+          </div>
+          <div class="instagram-photo">
+            <img src="images/insta07.webp" />
+          </div>
+          <div class="instagram-photo">
+            <img src="images/insta08.webp" />
+          </div>
         </div>
       </div>
       <div class="follow">
@@ -347,10 +306,24 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script>
       AOS.init();
     </script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
     <script src="index.js"></script>
   </body>
 </html>

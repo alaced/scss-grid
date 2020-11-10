@@ -38,5 +38,9 @@ $maxMax: 3000px;
     @media screen and (min-width: $minMax) and (max-width: $maxMax) {
       @content;
     }
+  } @else if $device == "webToMax" {
+    @media screen and (min-width: $minWeb) and (max-width: $maxMax) {
+      @content;
+    }
   }
 }

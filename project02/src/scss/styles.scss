@@ -65,14 +65,15 @@ body {
     div {
       cursor: pointer;
     }
-  }
-  .header__column:nth-child(2) {
-    justify-content: center;
-  }
-  .header__column:last-child {
-    justify-content: flex-end;
-    display: flex;
-    align-items: center;
+
+    &:nth-child(2) {
+      justify-content: center;
+    }
+    &:last-child {
+      justify-content: flex-end;
+      display: flex;
+      align-items: center;
+    }
   }
   .cart {
     display: flex;
@@ -113,7 +114,6 @@ body {
 }
 
 main {
-  // padding: 70px 0px;
   width: 100%;
   @include responsive("mobToWeb") {
     padding: 0px;
@@ -145,6 +145,9 @@ main {
     }
   }
   .studio {
+    img {
+      object-fit: cover;
+    }
     padding: 40px 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -166,6 +169,10 @@ main {
       margin-top: 50px;
       border: 1px solid black;
       width: 295px;
+      height: 55px;
+      @include responsive("mobile") {
+        width: 270px;
+      }
       @include main-font;
       display: grid;
       grid-template-columns: 8fr 1fr;
@@ -185,7 +192,7 @@ main {
         border-left: 1px solid $main-black;
         justify-self: center;
         font-size: 20px;
-        padding: 15px 20px;
+        padding: 12.5px 20px;
       }
     }
   }
@@ -193,70 +200,87 @@ main {
     padding: 40px 50px;
     width: 100%;
     .shop__header {
-      @include header-css("small");
+      @include header-css("big");
     }
     @include responsive("max") {
       padding: 40px 140px;
     }
+    @include responsive("mobile") {
+      padding: 40px;
+    }
+    .carousel-indicators li {
+      background-color: black;
+    }
     .prod__list {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: auto;
-      justify-items: center;
-      width: 100%;
-
-      @include responsive("mobNtab") {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
+      @include responsive("webToMax") {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        justify-items: center;
+        width: 100%;
+      }
+      @include responsive("tablet") {
+        padding: 50px;
+      }
+      @include responsive("mobile") {
+        padding: 20px 0px;
       }
       .prod__item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
+        @include responsive("webToMax") {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          width: 100%;
+        }
         img {
           width: 100%;
           cursor: pointer;
-          @include responsive("web01") {
-            img {
-              width: fit-content;
-            }
-          }
+          object-fit: scale-down;
         }
         .prod__desc {
           @include main-font;
           width: 100%;
-          .prod__type {
-            color: black;
-            cursor: pointer;
+          background-color: white;
+          @include responsive("mobNtab") {
+            padding-bottom: 10px;
           }
-          .prod__name {
-            @include sub-font;
-            font-size: 28px;
-            font-style: italic;
-            padding: 10px 0px;
-            cursor: pointer;
+        }
+        .carousel-caption {
+          position: relative !important;
+          left: auto !important;
+          right: auto !important;
+          background-color: white;
+        }
+        .prod__type {
+          color: black;
+          cursor: pointer;
+        }
+        .prod__name {
+          @include sub-font;
+          font-size: 25px;
+          font-style: italic;
+          padding: 10px 0px;
+          cursor: pointer;
+        }
+        .prod__price {
+          padding: 20px 0px;
+          cursor: pointer;
+        }
+        .add-cart {
+          @include main-font;
+          margin-top: 15px;
+          padding: 7% 25%;
+          border: 1px solid black;
+          color: black;
+          @include responsive("mobNtab") {
+            padding: 20px 30%;
           }
-          .prod__price {
-            padding: 20px 0px;
+          &:hover {
+            background-color: $main-black;
+            color: white;
+            transition: 0.3s ease-in-out;
             cursor: pointer;
-          }
-          .add-cart {
-            margin-top: 15px;
-            // padding: 22px 77px;
-            padding: 7% 23%;
-            border: 1px solid black;
-            color: black;
-            @include responsive("tablet") {
-              padding: 4% 35%;
-            }
-            &:hover {
-              background-color: $main-black;
-              color: white;
-              transition: 0.3s ease-in-out;
-              cursor: pointer;
-            }
           }
         }
       }
@@ -285,30 +309,54 @@ main {
     align-items: center;
     @include responsive("mobNtab") {
       padding: 40px 25px;
+      .carousel-indicators li {
+        background-color: black;
+      }
     }
     .brand-new__header {
       @include header-css("big");
       @include responsive("mobNtab") {
-        @include header-css("small");
+        @include header-css("big");
       }
       text-align: center;
     }
-    .prod__list {
-      display: grid;
-      justify-items: center;
-      grid-template-columns: repeat(8, 1fr);
-      grid-template-rows: 100%;
-      padding: 70px 40px;
-      width: 80%;
+    .new__list {
+      cursor: pointer;
+      @include responsive("webToMax") {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 100%;
+        padding: 70px 40px;
+        margin: 0px 10%;
+        width: 80%;
+      }
+      @include responsive("mobNtab") {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        padding: 50px 0px;
+      }
+      @include responsive("tablet") {
+        margin: 0px 15%;
+      }
+      @include responsive("web01") {
+        padding: 70px 40px;
+        margin: 0px;
+        width: 100%;
+      }
       align-items: center;
-      margin: 0px 10%;
-      .prod__item {
+      .new__item {
         img {
           width: 100%;
         }
         padding: 15px;
         justify-items: center;
-        border-left: 1px solid rgba(0, 0, 0, 0.5);
+        border-left: 1px solid rgba(0, 0, 0, 0.363);
+        @include responsive("mobNtab") {
+          border: none;
+        }
       }
       #no-border {
         border: none;
@@ -324,6 +372,9 @@ main {
     }
   }
   .brand-story {
+    img {
+      object-fit: cover;
+    }
     padding: 40px 50px;
     width: 100%;
     display: grid;
@@ -360,13 +411,8 @@ main {
     }
     .card__btn {
       @include main-font;
-      padding-top: 6%;
-      @include responsive("tablet") {
-        padding-top: 4%;
-      }
-      @include responsive("web01") {
-        padding-top: 3%;
-      }
+      // height: 55px;
+      padding: 3% 25px 0px 25px;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -464,21 +510,30 @@ main {
     }
   }
   .concept-photo {
-    display: grid;
     padding: 40px 50px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1fr;
     @include responsive("mobNtab") {
       padding: 40px 0px;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
     }
     @include responsive("web01") {
-      padding: 40px 0px;
+      padding: 50px 0px;
     }
     @include responsive("max") {
       padding: 40px 140px;
     }
+  }
+  .insta {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    @include responsive("mobNtab") {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+    @include responsive("max") {
+      padding: 40px 140px;
+    }
+
     div {
       width: 100%;
       height: 100%;
@@ -512,7 +567,7 @@ main {
 
 nav {
   @include main-font;
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 260px;
   align-items: center;
@@ -520,45 +575,45 @@ nav {
   justify-content: space-evenly;
   text-align: center;
   background-color: $beige;
-  padding: 0px 50px;
+  padding: 0px 30px;
   margin-top: 50px;
   @include responsive("mobNtab") {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-  }
-  @include responsive("mobNtab") {
+    padding: 0px 30px;
     .nav__column {
       padding: 35px;
-    }
-    .nav__column:nth-of-type(1) {
-      order: 1;
-    }
-    .nav__column:nth-of-type(2) {
-      order: 0;
-    }
-    .nav__column:nth-of-type(3) {
-      order: 2;
+
+      &:nth-of-type(1) {
+        order: 1;
+      }
+      &:nth-of-type(2) {
+        order: 0;
+      }
+      &:nth-of-type(3) {
+        order: 2;
+      }
     }
   }
   .nav__column:nth-child(2) {
-    padding: 0px 32%;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
+    padding: 0px 33%;
+    border-right: 1px solid $main-black;
+    border-left: 1px solid $main-black;
     @include responsive("mobNtab") {
       border: none;
-      padding: 35px 40%;
+      padding: 35px 30%;
     }
   }
   @include responsive("mobNtab") {
     .nav__column:first-child {
-      border-top: 1px solid black;
-      border-bottom: 1px solid black;
-      padding: 35px 30%;
+      border-top: 1px solid $main-black;
+      border-bottom: 1px solid $main-black;
+      padding: 35px 20%;
     }
   }
   .nav__title {
     margin-bottom: 25px;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.4);
   }
   .nav__list {
     padding: 7px 0px;
@@ -580,23 +635,5 @@ nav {
 }
 
 .none {
-  display: none;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-.fade-in {
-  animation: fade-in 1.4s;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: scale(0.7, 0.7);
-  }
-  to {
-    opacity: 1;
-  }
+  display: none !important;
 }
