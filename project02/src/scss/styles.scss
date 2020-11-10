@@ -1,9 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://use.typekit.net/cyr0xpl.css");
 @import "_reset.scss";
 @import "_variables";
 @import "_mixins";
 @import "_responsive-mixins.scss";
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
-@import url("https://use.typekit.net/cyr0xpl.css");
 
 * {
   box-sizing: border-box;
@@ -93,7 +93,7 @@ body {
 
 .shrinkHeader {
   padding: 5px 50px;
-  transition: 0.4s ease-in-out;
+  transition: 0.2s ease-in-out;
   font-size: 10px;
   @include responsive("mobToWeb") {
     padding: 5px 17px;
@@ -105,7 +105,7 @@ body {
 
 .shrinkImg {
   width: 47px !important;
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
   padding: 0px 5px;
   @include responsive("mobToWeb") {
     width: 30px;
@@ -293,6 +293,9 @@ main {
     padding: 40px 50px;
     img {
       width: 100%;
+    }
+    .banner__content {
+      max-width: 700px;
     }
     .banner__btn {
       padding: 22px 75px !important;
