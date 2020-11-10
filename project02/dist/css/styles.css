@@ -222,7 +222,7 @@ main .brand-story .card__btn div {
 }
 .shrinkHeader {
   padding: 5px 50px;
-  transition: 0.4s ease-in-out;
+  transition: 0.2s ease-in-out;
   font-size: 10px;
 }
 @media screen and (min-width: 320px) and (max-width: 1025px) {
@@ -237,7 +237,7 @@ main .brand-story .card__btn div {
 }
 .shrinkImg {
   width: 47px !important;
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
   padding: 0 5px;
 }
 @media screen and (min-width: 320px) and (max-width: 1025px) {
