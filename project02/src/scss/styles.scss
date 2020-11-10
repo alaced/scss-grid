@@ -536,9 +536,6 @@ main {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
     }
-    @include responsive("max") {
-      padding: 40px 140px;
-    }
 
     div {
       width: 100%;
