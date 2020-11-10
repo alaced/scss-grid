@@ -953,6 +953,7 @@ main .brand-new .new__list {
     display: -ms-grid;
     display: grid;
     justify-items: center;
+    -ms-grid-columns: (1fr) [6];
     grid-template-columns: repeat(6, 1fr);
     -ms-grid-rows: 100%;
     grid-template-rows: 100%;
@@ -990,6 +991,7 @@ main .brand-new .new__list {
     display: -ms-grid;
     display: grid;
     justify-items: center;
+    -ms-grid-columns: (1fr) [3];
     grid-template-columns: repeat(3, 1fr);
     -ms-grid-rows: auto auto;
     grid-template-rows: auto auto;
@@ -1404,6 +1406,7 @@ main .insta {
   width: 100%;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (1fr) [4];
   grid-template-columns: repeat(4, 1fr);
   -ms-grid-rows: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -1502,6 +1505,7 @@ nav {
   color: #414141;
   display: -ms-grid !important;
   display: grid !important;
+  -ms-grid-columns: (1fr) [3];
   grid-template-columns: repeat(3, 1fr);
   -ms-grid-rows: 260px;
   grid-template-rows: 260px;

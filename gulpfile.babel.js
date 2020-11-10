@@ -68,8 +68,7 @@ const assets02 = gulp.series([styles02]);
 const live01 = gulp.parallel([watch01]);
 const live02 = gulp.parallel([watch02]);
 
-export const dev = gulp
-  .series
+export const dev = gulp.series(
   // [prepare01, assets01, live01]
-  // [prepare02, assets02, live02]
-  ();
+  [prepare02, assets02, live02]
+);
