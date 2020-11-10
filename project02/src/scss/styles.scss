@@ -294,6 +294,9 @@ main {
     img {
       width: 100%;
     }
+    .banner__btn {
+      padding: 22px 75px !important;
+    }
     @include responsive("mobToWeb") {
       padding: 40px 0px;
     }
