@@ -22,6 +22,14 @@ const routes02 = {
   },
 };
 
+const routes03 = {
+  css: {
+    watch: "project03/src/scss/*",
+    src: "project03/src/scss/styles.scss",
+    dest: "project03/dist/css",
+  },
+};
+
 const styles01 = () =>
   gulp
     .src(routes01.css.src)
@@ -48,6 +56,19 @@ const styles02 = () =>
     .pipe(minify())
     .pipe(gulp.dest(routes02.css.dest));
 
+const styles03 = () =>
+  gulp
+    .src(routes03.css.src)
+    .pipe(sass().on("error", sass.logError))
+    .pipe(
+      autoprefixer({
+        flexbox: true,
+        grid: "autoplace",
+      })
+    )
+    .pipe(minify())
+    .pipe(gulp.dest(routes03.css.dest));
+
 const watch01 = () => {
   gulp.watch(routes01.css.watch, styles01);
 };
@@ -56,19 +77,28 @@ const watch02 = () => {
   gulp.watch(routes02.css.watch, styles02);
 };
 
+const watch03 = () => {
+  gulp.watch(routes03.css.watch, styles03);
+};
+
 const clean01 = () => del(["project01/dist/"]);
 const clean02 = () => del(["project02/dist/"]);
+const clean03 = () => del(["project03/dist/"]);
 
 const prepare01 = gulp.series([clean01]);
 const prepare02 = gulp.series([clean02]);
+const prepare03 = gulp.series([clean03]);
 
 const assets01 = gulp.series([styles01]);
 const assets02 = gulp.series([styles02]);
+const assets03 = gulp.series([styles03]);
 
 const live01 = gulp.parallel([watch01]);
 const live02 = gulp.parallel([watch02]);
+const live03 = gulp.parallel([watch03]);
 
 export const dev = gulp.series(
   // [prepare01, assets01, live01]
-  [prepare02, assets02, live02]
+  // [prepare02, assets02, live02]
+  [prepare03, assets03, live03]
 );
