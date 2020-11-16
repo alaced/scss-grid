@@ -142,7 +142,7 @@ body {
           font-size: 38px;
           text-align: center;
           font-weight: 600;
-          transition: all 0.3s linear;
+          transition: all 0.3s ease-in-out;
           @include responsive("mobile") {
             font-size: 20px;
             position: static;
@@ -227,14 +227,21 @@ body {
     .prod__item {
       width: 100%;
       height: 100%;
+      cursor: pointer;
+      &:hover {
+      }
       img {
         width: 100%;
         height: 100%;
+        &:hover {
+          filter: blur(2px) opacity(30%);
+          transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
       }
     }
-    .wide {
-      grid-column: span 2;
-    }
+  }
+  .wide {
+    grid-column: span 2;
   }
 }
 
@@ -282,9 +289,9 @@ body {
 }
 
 .hide {
-  visibility: hidden;
+  opacity: 0 !important;
   @include responsive("mobNtab") {
-    visibility: visible;
+    visibility: 1;
   }
 }
 
