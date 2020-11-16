@@ -36,20 +36,38 @@ body {
   @include responsive("mobile") {
     grid-template-columns: 1fr 1fr;
   }
+
   .header__column:first-child {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s linear;
     &:hover {
       background-color: $header-bg;
+      transition: all 0.2s linear;
+      div:not(:first-child) {
+        color: black;
+      }
     }
     .header__list {
       color: rgba(0, 0, 0, 0.3);
+      &:hover {
+        transition: color 0.2s linear;
+        .header__item {
+          color: white;
+        }
+      }
       .header__item {
         padding-right: 7%;
       }
     }
   }
   .header__column:last-child {
-    transition: all 0.2s ease-in-out;
+    color: black;
+    transition: all 0.2s linear;
+    @include responsive("mobile") {
+      .header__list {
+        padding-top: 11.5px;
+        padding-bottom: 10px;
+      }
+    }
     &:hover {
       background-color: $header-bg;
     }
@@ -59,23 +77,29 @@ body {
     }
   }
   .header__column {
-    padding: 7px 0px;
     align-self: center;
     font-size: 30px;
     display: flex;
     align-items: center;
-    padding-bottom: 9px;
+    .header__list {
+      padding: 8.5px 0px;
+    }
     @include responsive("mobile") {
       font-size: 24px;
-      padding-bottom: 12px;
-      padding-top: 10px;
+      // padding-bottom: 12px;
+      // padding-top: 10px;
     }
     .logo {
+      padding: 8.5px 0px;
       padding-left: 12px;
       padding-right: 10%;
       cursor: pointer;
-      transition: all 0.2s ease-in-out;
+      @include responsive("mobile") {
+        padding-top: 11.5px;
+        padding-bottom: 10px;
+      }
       &:hover {
+        transition: color 0.2 linear;
         color: white;
         @include responsive("mobile") {
           color: black;
@@ -162,10 +186,10 @@ body {
   }
 }
 
-.header-change {
-  color: black;
-  transition: all 0.2s ease-in-out;
-}
+// .header-change {
+//   color: black;
+//   transition: all 0.2s ease-in-out;
+// }
 
 .none {
   display: none;

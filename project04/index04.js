@@ -1,14 +1,6 @@
-const logo = document.querySelector(".js-logo"),
-  headerList = document.querySelector(".js-header"),
+const headerList = document.querySelector(".js-header"),
   headerItem = headerList.querySelectorAll(".header__item"),
   hide = document.querySelector(".js-hide");
-
-logo.addEventListener("mouseenter", function (e) {
-  headerItem.forEach((list) => list.classList.add("header-change"));
-});
-logo.addEventListener("mouseleave", function (e) {
-  headerItem.forEach((list) => list.classList.remove("header-change"));
-});
 
 let screenSize = window.matchMedia("(max-width: 890px)");
 
