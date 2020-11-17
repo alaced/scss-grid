@@ -1,0 +1,22 @@
+$minMobile: 320px;
+$maxMobile: 685px;
+$minWeb: 685px;
+$maxWeb: 1150;
+$minMax: 1150;
+$maxMax: 3000px;
+
+@mixin responsive($device) {
+  @if $device == "mobile" {
+    @media screen and (min-width: $minMobile) and (max-width: $maxMobile) {
+      @content;
+    }
+  } @else if $device == "web" {
+    @media screen and (min-width: $minWeb) and (max-width: $maxWeb) {
+      @content;
+    }
+  } @else if $device == "max" {
+    @media screen and (min-width: $minMax) and (max-width: $maxMax) {
+      @content;
+    }
+  }
+}
