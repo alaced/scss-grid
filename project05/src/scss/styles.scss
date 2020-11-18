@@ -8,9 +8,9 @@
 * {
   box-sizing: border-box;
 }
-html {
-  scroll-behavior: smooth;
-}
+// html {
+//   scroll-behavior: smooth;
+// }
 
 button {
   all: unset;
@@ -38,9 +38,7 @@ body {
   width: 100%;
   padding-top: 108px;
   font-family: "Libre Franklin", sans-serif;
-  @include responsive("mobToWeb") {
-    padding-top: 20px;
-  }
+  overflow-x: hidden;
 }
 
 .shrinkHeader {
@@ -82,6 +80,27 @@ body {
   width: 100%;
   background-color: white;
   z-index: 100;
+  @include responsive("mobNtab") {
+    justify-content: left;
+    .header__column {
+      display: flex;
+      padding: 8.5px 0px 8.5px 35px !important;
+      align-items: center;
+      img {
+        padding-top: 0px;
+        width: 90px;
+        height: 30px;
+      }
+      .header__list {
+        font-size: 35px;
+        display: flex;
+        align-items: center;
+      }
+    }
+    .js-hide {
+      padding: 0px 0px 0px 5px !important;
+    }
+  }
   .header__column {
     padding: 22px 35px;
     font-family: fairweather, sans-serif;
@@ -112,15 +131,17 @@ body {
 }
 
 .main {
+  margin: 0px 5vw !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   .banner {
-    padding: 0px 45px 40px 45px;
+    padding: 0px 0px 20px 0px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    // height: calc(100vh - 109px) !important;
     .banner__title {
       padding-top: 50px;
       display: flex;
@@ -147,28 +168,46 @@ body {
       max-height: 540px;
       display: flex;
       justify-content: center;
+      object-fit: cover;
     }
     img {
       width: 100%;
-      height: 100%;
+      max-width: 750px;
+      max-height: 540px;
     }
   }
   .about {
     padding: 100px 50px 140px 50px;
+    @include responsive("mobNtab") {
+      padding: 80px 20px 100px 20px;
+    }
+    @include responsive("mobile") {
+      padding: 80px 10px 80px 10px;
+    }
     .about__desc {
       font-size: 31px;
       line-height: 2.9rem;
+      @include responsive("mobNtab") {
+        font-size: 15px;
+        line-height: 1.7rem;
+      }
       &::before {
         content: "About";
         padding-right: 4rem;
         font-size: 23px;
         font-weight: 600;
+        @include responsive("mobNtab") {
+          font-size: 16px;
+        }
       }
       button {
         display: block;
         font-size: 23px;
         font-weight: 500;
         padding: 10px 0px;
+        @include responsive("mobNtab") {
+          font-size: 16px;
+        }
         i {
           padding: 10px;
         }
@@ -177,7 +216,7 @@ body {
   }
   .section {
     padding: 20px 0px;
-    margin: 0px 5vw;
+    // margin: 0px 5vw;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     @include article;
   }
@@ -187,6 +226,14 @@ body {
       order: 1;
     }
   }
+  @include responsive("mobile") {
+    .journalism,
+    .paper {
+      .article__content {
+        order: 1;
+      }
+    }
+  }
   .card {
     @include card;
   }
@@ -194,11 +241,75 @@ body {
   .shop {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
     column-gap: 20px;
+    @include responsive("mobNtab") {
+      column-gap: 15px;
+    }
+    @include responsive("mobile") {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 0.8fr;
+
+      .card {
+        &:last-child {
+          padding-top: 20px;
+          border-top: 1px solid rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+  .essay {
+    @include responsive("mobile") {
+      .card {
+        &:first-child {
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+  .ad {
+    .article {
+      grid-template-columns: 1fr !important;
+      grid-template-rows: auto;
+      .article__content {
+        display: grid;
+        column-gap: 30px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        .article__title {
+          grid-row-start: 1;
+          grid-column-start: 1;
+        }
+        .article__desc {
+          grid-row-start: 2;
+          grid-column-start: 1;
+        }
+        .article__img {
+          grid-column: 2 / span 1;
+          grid-row: 1 / span 3;
+        }
+      }
+      @include responsive("mobile") {
+        .article__content {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(4, auto);
+          .article__title {
+            padding-top: 20px;
+          }
+          .article__img {
+            grid-row: 2 / span 1;
+            grid-column-start: 1;
+            padding-bottom: 20px;
+          }
+          .article__desc {
+            grid-row-start: 3;
+          }
+        }
+      }
+    }
   }
   .shop {
-    column-gap: 35px;
+    column-gap: 30px;
     .wine {
       .card__img {
         background-color: black;
@@ -211,9 +322,22 @@ body {
   }
   .more {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 25px;
     padding-bottom: 100px;
+    @include responsive("mobile") {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(3, 1fr);
+      .card__title {
+        padding-bottom: 0px;
+      }
+      .card:nth-child(2) {
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        padding-bottom: 20px;
+      }
+    }
   }
 }
 
@@ -222,6 +346,9 @@ body {
   background-color: #464646;
   color: white;
   font-weight: 300;
+  @include responsive("mobNtab") {
+    height: 360px;
+  }
   .nav {
     height: 100%;
     margin: 0px 5vw;
@@ -229,6 +356,12 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 30px;
+    @include responsive("mobNtab") {
+      grid-template-columns: 1fr;
+      grid-template-rows: 5fr 1fr;
+      row-gap: 20px;
+      font-size: 9px;
+    }
     .nav__item {
       font-size: 15px;
       line-height: 1.3rem;
@@ -252,6 +385,9 @@ body {
     .nav__column:last-child {
       display: flex;
       justify-content: space-between;
+      @include responsive("mobNtab") {
+        align-items: flex-end;
+      }
     }
   }
 }
