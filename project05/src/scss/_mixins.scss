@@ -14,12 +14,23 @@
     background-color: black;
     color: white;
   }
+  @include responsive("mobNtab") {
+    margin-bottom: 5px;
+    width: 100px;
+    height: 33px;
+    font-size: 12px;
+  }
+  @include responsive("mobile") {
+  }
 }
 
 @mixin title {
   font-size: 23px;
   font-weight: 600;
   padding: 5px 0px;
+  @include responsive("mobNtab") {
+    font-size: 16px;
+  }
 }
 
 @mixin article {
@@ -28,15 +39,30 @@
     column-gap: 40px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 100%;
+    @include responsive("mobNtab") {
+      column-gap: 15px;
+    }
+    @include responsive("mobile") {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+    }
     .article__content {
       .article__title {
         @include title;
+        @include responsive("mobile") {
+          padding: 30px 0px 10px 0px;
+        }
       }
       .article__desc {
         padding: 40px 0px 50px 0px;
         font-size: 32px;
         line-height: 2.9rem;
         letter-spacing: 0.8px;
+        @include responsive("mobNtab") {
+          padding: 20px 0px 40px 0px;
+          font-size: 14px;
+          line-height: 1.4rem;
+        }
       }
       .btn__wrapper {
         display: flex;
@@ -48,6 +74,9 @@
     .article__img {
       width: 100%;
       height: 100%;
+      @include responsive("mobile") {
+        padding-top: 20px;
+      }
       img {
         width: 100%;
         cursor: pointer;
@@ -57,15 +86,27 @@
 }
 
 @mixin card {
+  @include responsive("mobile") {
+    &:not(:first-of-type) {
+      padding-top: 20px;
+    }
+  }
   .card__title {
     @include title;
     padding-bottom: 40px;
+    @include responsive("mobNtab") {
+      padding-bottom: 30px;
+    }
   }
   .card__desc {
     font-size: 23px;
     font-weight: 300;
     padding: 20px 0px 40px 0px;
     line-height: 2rem;
+    @include responsive("mobNtab") {
+      font-size: 14px;
+      line-height: 1.5rem;
+    }
   }
   .card__img {
     width: 100%;

@@ -1,5 +1,7 @@
 $minMobile: 320px;
-$maxMobile: 685px;
+$maxMobile: 600px;
+$minTablet: 600px;
+$maxTablet: 685px;
 $minWeb: 685px;
 $maxWeb: 1150;
 $minMax: 1150;
@@ -8,6 +10,14 @@ $maxMax: 3000px;
 @mixin responsive($device) {
   @if $device == "mobile" {
     @media screen and (min-width: $minMobile) and (max-width: $maxMobile) {
+      @content;
+    }
+  } @else if $device == "tab" {
+    @media screen and (min-width: $minTablet) and (max-width: $maxTablet) {
+      @content;
+    }
+  } @else if $device == "mobNtab" {
+    @media screen and (min-width: $minMobile) and (max-width: $maxTablet) {
       @content;
     }
   } @else if $device == "web" {
