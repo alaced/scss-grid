@@ -96,12 +96,3 @@ prodImg03.addEventListener("mouseenter", function (e) {
 prodImg03.addEventListener("mouseleave", function (e) {
   prodImg03.setAttribute("src", "images/shop06.webp");
 });
-
-// prodPrice.addEventListener("mouseenter", function (e) {
-//   prodPrice.forEach(function(price) {
-//     price.innerText = "VIEW DETAIL";
-//   });
-// prodPrice.addEventListener("mouseleave", function (e) {
-//   prodPrice.forEach(function(price) {
-//     price.innerText = "$40.00";
-// });
