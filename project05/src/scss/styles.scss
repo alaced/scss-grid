@@ -8,9 +8,9 @@
 * {
   box-sizing: border-box;
 }
-// html {
-//   scroll-behavior: smooth;
-// }
+html {
+  scroll-behavior: smooth;
+}
 
 button {
   all: unset;
@@ -47,7 +47,7 @@ body {
   padding: 8.5px 0px 8.5px 35px !important;
   align-items: center;
   img {
-    width: 80px;
+    width: 90px;
     height: 30px;
     padding-top: 5px;
   }
@@ -57,15 +57,16 @@ body {
 }
 
 .gatherHeader {
+  transition: all 0.2s ease-in-out;
   justify-content: left !important;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 .edit-logo {
   transition: all 0.3s ease-in-out;
-  padding: 10px 0px 10px 5px !important;
+  padding: 8.5px 0px 8.5px 5px !important;
   .header__list {
-    font-size: 29px;
+    font-size: 35px;
     display: flex;
     align-items: center;
   }
@@ -98,7 +99,7 @@ body {
       }
     }
     .js-hide {
-      padding: 0px 0px 0px 5px !important;
+      padding: 8.5px 0px 8.5px 5px !important;
     }
   }
   .header__column {
