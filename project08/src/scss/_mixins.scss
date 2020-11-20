@@ -1,0 +1,52 @@
+@mixin bg-color {
+  .red-bg {
+    background-color: $bg-red-light;
+    &:nth-of-type(even) {
+      background-color: $bg-red;
+    }
+  }
+  .purple-bg {
+    background-color: $bg-purple-light;
+    &:nth-of-type(even) {
+      background-color: $bg-purple;
+    }
+  }
+  .beige-bg {
+    background-color: $bg-beige-light;
+    &:nth-of-type(even) {
+      background-color: $bg-beige;
+    }
+  }
+  .yellow-bg {
+    background-color: $bg-yellow-light;
+    &:nth-of-type(even) {
+      background-color: $bg-yellow;
+    }
+  }
+  .green-bg {
+    background-color: $bg-green-light;
+    &:nth-of-type(even) {
+      background-color: $bg-green;
+    }
+  }
+  .orange-bg {
+    background-color: $bg-orange-light;
+    &:nth-of-type(even) {
+      background-color: $bg-orange;
+    }
+  }
+  .blue-bg {
+    background-color: $bg-blue-light;
+    &:nth-of-type(even) {
+      background-color: $bg-blue;
+    }
+  }
+}
+
+@mixin card-side {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  padding: 15px 15px;
+  letter-spacing: 0.7px;
+}
