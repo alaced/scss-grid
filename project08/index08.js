@@ -1,51 +1,42 @@
-// const header = document.querySelector(".js-header"),
-//   logoImg = document.querySelector(".logo"),
-//   headerBtn = document.querySelectorAll(".button"),
-//   hideMe = document.querySelectorAll(".hide-me");
+const header = document.querySelector(".js-header");
 
-// window.addEventListener("scroll", scrollHandler);
-
-// function scrollHandler(event) {
-//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-//     logoImg.classList.add("shrinkImg");
-//     header.classList.add("shrinkHeader");
-//   } else {
-//     header.classList.remove("shrinkHeader");
-//     logoImg.classList.remove("shrinkImg");
-//   }
-// }
-// let headerSize = window.matchMedia("(max-width: 1025px)");
+// let headerSize = window.matchMedia("(max-width: 1050px)");
 // function resizeHeader() {
 //   if (headerSize.matches) {
-//     journalBtn.classList.add("none");
-//     shopBtn.classList.add("none");
-//     studioBtn.innerHTML = "<i class='fas fa-bars'></i>";
+//     label.forEach(function (text) {
+//       text.innerText = "";
+//     });
 //   } else {
-//     journalBtn.classList.remove("none");
-//     shopBtn.classList.remove("none");
-//     studioBtn.innerHTML = "Nail Studio";
+//     label.forEach(function (text) {
+//       text.innerText = "";
+//     });
 //   }
 // }
 // resizeHeader();
 
 // headerSize.addEventListener("change", resizeHeader);
 
-// let carouselSize = window.matchMedia("(max-width: 700px)");
-// function carouselHandler() {
-//   if (carouselSize.matches) {
-//     carousel.forEach(function (caro) {
-//       caro.classList.add("slide");
-//     });
-//   } else {
-//     carousel.forEach(function (caro) {
-//       caro.classList.remove("slide");
-//     });
-//   }
-// }
-// carouselHandler();
-
-// carouselSize.addEventListener("change", carouselHandler);
-
 // prodImg01.addEventListener("mouseenter", function (e) {
 //   prodImg01.setAttribute("src", "images/shop04-01.webp");
 // });
+
+$("#filters :checkbox").click(function () {
+  var check = $("#filters :checkbox:checked").length;
+  if (!check) return $(".card").show();
+  $(".card").hide();
+  $("#filters :checkbox:checked").each(function () {
+    $("." + $(this).val()).show();
+  });
+});
+
+(function ($) {
+  function mediaSize() {
+    if (window.matchMedia("(max-width: 1050px)").matches) {
+      $("label").children("div").hide();
+    } else {
+      $("label").children("div").show();
+    }
+  }
+  mediaSize();
+  window.addEventListener("resize", mediaSize, false);
+})(jQuery);

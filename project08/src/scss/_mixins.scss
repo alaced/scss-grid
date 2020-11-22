@@ -47,6 +47,58 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.6rem;
-  padding: 15px 15px;
+  padding: 15px;
   letter-spacing: 0.7px;
+  @include responsive("mobile") {
+    font-size: 0.9rem;
+    padding: 30px;
+    line-height: 1.2rem;
+  }
+}
+
+@mixin indicator {
+  label {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      text-decoration: underline;
+    }
+    @include colors;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"] + label span {
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+    vertical-align: middle;
+  }
+}
+
+@mixin colors {
+  .yellow {
+    background-color: $indi-yellow;
+  }
+  .green {
+    background-color: $indi-green;
+  }
+  .blue {
+    background-color: $indi-blue;
+  }
+  .red {
+    background-color: $indi-red;
+  }
+  .beige {
+    background-color: $indi-beige;
+  }
+  .purple {
+    background-color: $indi-purple;
+  }
+  .orange {
+    background-color: $indi-orange;
+  }
 }
