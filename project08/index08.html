@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <title>Beige</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header__column">
+        <div class="header__item logo">BEIGE</div>
+      </div>
+      <div class="header__column js-header" id="filters">
+        <div class="header__item">
+          <input type="checkbox" value="yellow-bg" id="filter-yellow-bg"/>
+          <label for="filter-yellow-bg"><span class="yellow"></span><div>Kultur</div></label>
+        </div>
+        <div class="header__item">
+          <input type="checkbox" value="green-bg" id="filter-green-bg"/>
+          <label for="filter-green-bg"><span class="green"></span><div>Menchen</div></label>
+        </div>
+        <div class="header__item">
+          <input type="checkbox" value="blue-bg" id="filter-blue-bg"/>
+          <label for="filter-blue-bg"><span class="blue"></span><div>Reisen</div></label>
+        </div>
+        <div class="header__item">     
+          <input type="checkbox" value="red-bg" id="filter-red-bg"/>
+          <label for="filter-red-bg"><span class="red"></span><div>Design</div></label>
+        </div>
+        <div class="header__item">    
+          <input type="checkbox" value="beige-bg" id="filter-beige-bg"/>
+          <label for="filter-beige-bg"><span class="beige"></span><div>Mode</div></label>
+        </div>
+        <div class="header__item"> 
+          <input type="checkbox" value="purple-bg" id="filter-purple-bg"/>
+          <label for="filter-purple-bg"><span class="purple"></span><div>Pflege</div></label>
+        </div>
+        <div class="header__item">   
+          <input type="checkbox" value="orange-bg" id="filter-orange-bg"/>
+          <label for="filter-orange-bg"><span class="orange"></span><div>Fair</div></label>
+        </div>
+      </div>
+      <div class="header__column">
+        <div class="header__item"><i class="fas fa-search"></i></div>
+        <div class="header__item"><i class="fas fa-question"></i></div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="card red-bg">
+        <div class="card__autor">
+          <div class="autor__date">19. November 2020</div>
+          <div class="autor">Marie Jaster</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/01.gif" /></div>
+          <div class="card__title">Der Countdown läuft: 10 Adventskalender, über die wir uns riesig freuen würden</div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">Best-of</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card purple-bg">
+        <div class="card__autor">
+          <div class="autor__date">18. November 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/02.jpg" /></div>
+          <div class="card__title">Frequently Used: Produkte, die wir im Oktober besonders gemocht haben
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">Best-of</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card beige-bg">
+        <div class="card__autor">
+          <div class="autor__date">17. November 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/03.jpg" /></div>
+          <div class="card__title">Beige feels: Der tägliche Wahnsinn
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card red-bg">
+        <div class="card__autor">
+          <div class="autor__date">16. November 2020</div>
+          <div class="autor">Lisa Trautmann</br>Marie Jaster</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/04.jpeg" /></div>
+          <div class="card__title">#BEIGEsprochen: Hört jetzt die zweite Folge unseres Design-Podcasts mit Architektin Ester Bruzkus</div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">Studiobesuch</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card yellow-bg">
+        <div class="card__autor">
+          <div class="autor__date">13. November 2020</div>
+          <div class="autor">Lisa Trautmann</br>Julia Meyer-Brehm</br>Marie Jaster</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/05.jpg" /></div>
+          <div class="card__title">100 Prozent Kaffeegenuss, egal, wo ihr seid: 19grams machts möglich</div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">Best-of</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card newsletter">
+        <div class="card__autor">
+          <div class="autor__date">Newsletter</div>
+          <div class="autor">Newsletter</div>
+        </div>
+        <div class="newsletter__desc">
+          <div class="newsletter__title">Hol dir Farbe in deine Inbox</div>
+          <div class="colors">
+            <div class="color yellow"></div>
+            <div class="color green"></div>
+            <div class="color blue"></div>
+            <div class="color red"></div>
+            <div class="color beige"></div>
+            <div class="color purple"></div>
+            <div class="color orange"></div>
+          </div>
+        </div>
+          <form  class="newsletter__email">
+            <input type="text" placeholder="du@beispiel.de">
+            <button class="submit">Anmelden</button>
+          </form>
+        <div class="card__type">
+          <div class="type__column">Newsletter</div>
+          <div class="type__column">Newsletter</div>
+        </div>
+      </div>
+      <div class="card green-bg">
+        <div class="card__autor">
+          <div class="autor__date">13. November 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/06.jpg" /></div>
+          <div class="card__title">Teamwork makes the dream work – Der Adventskalender für dich und deinen Hund</div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">Artikel</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card orange-bg">
+        <div class="card__autor">
+          <div class="autor__date">12. November 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/07.jpeg" /></div>
+          <div class="card__title">Zwei rechts, zwei links, alle nachhaltig! Die schönsten, fairen Stricklabels für den Winter
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">Shopping</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card green-bg">
+        <div class="card__autor">
+          <div class="autor__date">11. November 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/08.jpg" /></div>
+          <div class="card__title">
+            Ja, ich bin schwanger. Nein, es ist kein Corona-Baby
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">Kolumne</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card beige-bg">
+        <div class="card__autor">
+          <div class="autor__date">8. November 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/09.jpg" /></div>
+          <div class="card__title">Beige feels: Hallo, Optimismus!
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card yellow-bg">
+        <div class="card__autor">
+          <div class="autor__date">6. November 2020</div>
+          <div class="autor">Lea Schramm</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/10.jpg" /></div>
+          <div class="card__title">
+            Die große Beige-Serie zur US-Wahl 2020: Teil 4 – Hoffnungen und Wünsche junger Amerikaner*innen</div>
+          </div>
+        <div class="card__type">
+          <div class="type__column">Meinung</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card beige-bg">
+        <div class="card__autor">
+          <div class="autor__date">3. November 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/11.jpg" /></div>
+          <div class="card__title">
+            Beige feels: Jetzt erst recht!
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card  blue-bg">
+        <div class="card__autor">
+          <div class="autor__date">2. November 2020</div>
+          <div class="autor">Julia Meyer-Brehm</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/12.jpeg" /></div>
+          <div class="card__title">
+            Der Beige Travel Guide für Kopenhagen: Kunst
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card yellow-bg">
+        <div class="card__autor">
+          <div class="autor__date">30. October 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/13.gif" /></div>
+          <div class="card__title">
+            Willkommen zu unseren Halloween-Horror-Highlights zum Streamen
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card yellow-bg">
+        <div class="card__autor">
+          <div class="autor__date">29. October 2020</div>
+          <div class="autor">Lea Schramm</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/14.jpg" /></div>
+          <div class="card__title">
+            Die große Beige-Serie zur US-Wahl 2020: Teil 3 – Ein letzter Check
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card beige-bg">
+        <div class="card__autor">
+          <div class="autor__date">27. October 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/15.jpg" /></div>
+          <div class="card__title">
+            Beige feels: Bis zur Unendlichkeit ...
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card green-bg">
+        <div class="card__autor">
+          <div class="autor__date">26. October 2020</div>
+          <div class="autor">Ragnhild Deschner</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/16.jpeg" /></div>
+          <div class="card__title">
+            Abgekämpft und dauermüde – Geschichten einer Working Mum
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card yellow-bg">
+        <div class="card__autor">
+          <div class="autor__date">23. October 2020</div>
+          <div class="autor">Lea Schramm</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/17.jpg" /></div>
+          <div class="card__title">
+            Die große Beige-Serie zur US-Wahl: Teil 2 – Der Countdown läuft
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card purple-bg">
+        <div class="card__autor">
+          <div class="autor__date">22. October 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/18.jpg" /></div>
+          <div class="card__title">
+            Sie tasten was, was niemand sieht: Wie Discovering Hands die Brustkrebsvorsorge revolutioniert
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card orange-bg">
+        <div class="card__autor">
+          <div class="autor__date">22. October 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/19.jpg" /></div>
+          <div class="card__title">
+            Nachhaltige Wäsche ist unsexy? Gähn! – Im Gespräch mit Sarah Grohé, Mitgründerin von erlich textil
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card beige-bg">
+        <div class="card__autor">
+          <div class="autor__date">20. October 2020</div>
+          <div class="autor">Julia Meyer-Brehm</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/20.gif" /></div>
+          <div class="card__title">
+            Beige feels: Make a Statement
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card yellow-bg">
+        <div class="card__autor">
+          <div class="autor__date">20. October 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/21.jpg" /></div>
+          <div class="card__title">
+            DienstArt - Die Kunstkolumne: Ein Mann ist ein Mann ist ein Mann
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card purple-bg">
+        <div class="card__autor">
+          <div class="autor__date">19. October 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/22.jpg" /></div>
+          <div class="card__title">
+            Frequently Used: Produkte, die wir im September besonders gemocht haben
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+      <div class="card beige-bg">
+        <div class="card__autor">
+          <div class="autor__date">18. October 2020</div>
+          <div class="autor">Lisa Trautmann</div>
+        </div>
+        <div class="card__desc">
+          <div class="card__img"><img src="images/23.jpg" /></div>
+          <div class="card__title">
+            Beige feels: Wir sehen Farben!
+          </div>
+        </div>
+        <div class="card__type">
+          <div class="type__column">News</div>
+          <div class="type__column">Kommentiere</div>
+        </div>
+      </div>
+
+    </div>
+    <script
+      src="https://kit.fontawesome.com/841cfaa0da.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="index08.js"></script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+@mixin bg-color {
+  .red-bg {
+    background-color: $bg-red-light;
+    &:nth-of-type(even) {
+      background-color: $bg-red;
+    }
+  }
+  .purple-bg {
+    background-color: $bg-purple-light;
+    &:nth-of-type(even) {
+      background-color: $bg-purple;
+    }
+  }
+  .beige-bg {
+    background-color: $bg-beige-light;
+    &:nth-of-type(even) {
+      background-color: $bg-beige;
+    }
+  }
+  .yellow-bg {
+    background-color: $bg-yellow-light;
+    &:nth-of-type(even) {
+      background-color: $bg-yellow;
+    }
+  }
+  .green-bg {
+    background-color: $bg-green-light;
+    &:nth-of-type(even) {
+      background-color: $bg-green;
+    }
+  }
+  .orange-bg {
+    background-color: $bg-orange-light;
+    &:nth-of-type(even) {
+      background-color: $bg-orange;
+    }
+  }
+  .blue-bg {
+    background-color: $bg-blue-light;
+    &:nth-of-type(even) {
+      background-color: $bg-blue;
+    }
+  }
+}
+
+@mixin card-side {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  padding: 15px;
+  letter-spacing: 0.7px;
+  @include responsive("mobile") {
+    font-size: 0.9rem;
+    padding: 30px;
+    line-height: 1.2rem;
+  }
+}
+
+@mixin indicator {
+  label {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      text-decoration: underline;
+    }
+    @include colors;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"] + label span {
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+    vertical-align: middle;
+  }
+}
+
+@mixin colors {
+  .yellow {
+    background-color: $indi-yellow;
+  }
+  .green {
+    background-color: $indi-green;
+  }
+  .blue {
+    background-color: $indi-blue;
+  }
+  .red {
+    background-color: $indi-red;
+  }
+  .beige {
+    background-color: $indi-beige;
+  }
+  .purple {
+    background-color: $indi-purple;
+  }
+  .orange {
+    background-color: $indi-orange;
+  }
+}
