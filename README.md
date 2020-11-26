@@ -7,7 +7,6 @@
 
 - Ongoing project
 - flexbox, grid로 구성한 responsive layout을 반영한 웹페이지 클론 코딩
--
 
 ## To Clone:
 
@@ -19,4 +18,4 @@
 - [x] [https://rodicdavidson.co.uk/](https://rodicdavidson.co.uk/)
 - [x] [https://beige.de/](https://beige.de/)
 - [ ] [https://canalstreet.market/](https://canalstreet.market/)
-- [ ] [https://wonhundred.com/](https://wonhundred.com/)
+- [x] [https://wonhundred.com/](https://wonhundred.com/)
