@@ -1,0 +1,98 @@
+@mixin prod {
+  .prod {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .prod__title {
+      font-size: 35px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      padding-bottom: 45px;
+      text-align: center;
+      @include responsive("mobNtab") {
+        font-size: 25px;
+        letter-spacing: 1px;
+      }
+    }
+    .prod__wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-color: black;
+      border: 1px solid black;
+      width: 100%;
+      gap: 1px;
+      @include responsive("mobNtab") {
+        grid-template-columns: 1fr;
+      }
+      .prod__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        width: 100%;
+        gap: 1px;
+        background-color: black;
+        .prod__item {
+          display: grid;
+          grid-template-rows: auto 200px;
+          background-color: white;
+          gap: 1px;
+          cursor: pointer;
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+          .prod__content {
+            font-size: 14px;
+            padding: 15px;
+            line-height: 1.5rem;
+          }
+        }
+        .prod__btn {
+          grid-column: 1 / span 2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: white;
+          font-size: 19px;
+          font-weight: 700;
+          padding: 20px;
+          cursor: pointer;
+          @include responsive("mobNtab") {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin dropdown {
+  .dropdown {
+    float: left;
+    &:hover {
+      .dropdown__currency {
+        display: block;
+        position: absolute;
+        top: 61px;
+        z-index: 1;
+        background-color: white;
+        width: 102%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid black;
+        border-top: none;
+        box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
+      }
+    }
+    .dropdown__currency {
+      display: none;
+      button {
+        float: none;
+        display: block;
+        padding: 10px;
+      }
+    }
+  }
+}

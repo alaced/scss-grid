@@ -24,6 +24,10 @@ body {
   padding-top: 40px;
 }
 
+.gray {
+  background-color: gray;
+}
+
 .header {
   position: fixed;
   width: 100%;
@@ -59,6 +63,9 @@ body {
       display: flex;
       align-items: center;
       @include indicator;
+      @include responsive("tabToWeb") {
+        padding: 0px 4px;
+      }
       @include responsive("mobile") {
         padding: 0px 2px;
       }
@@ -96,9 +103,13 @@ body {
   .card {
     cursor: pointer;
     display: grid;
-    grid-template-rows: minmax(50px, 80px) 1fr minmax(40px, 60px);
+    // grid-template-rows: minmax(50px, 80px) 1fr minmax(40px, 60px);
+    grid-template-rows: 1fr 3.5fr 1fr;
     @include responsive("mobile") {
       grid-template-rows: 120px 1fr 100px;
+    }
+    @include responsive("web") {
+      grid-template-rows: 1fr 4.5fr 1fr;
     }
     .card__autor {
       @include card-side;
@@ -109,25 +120,28 @@ body {
     }
     .card__desc {
       display: grid;
-      grid-template-rows: 1fr minmax(80px, 100px);
+      grid-template-rows: 1fr 0.5fr;
       row-gap: 30px;
       @include responsive("mobile") {
         grid-template-rows: 1.8fr 1fr;
       }
       .card__img {
         width: 100%;
-        height: 220px;
-        padding: 0px 18% 0px 18%;
+        max-height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 16%;
         @include responsive("mobile") {
-          max-height: 300px;
+          min-height: 300px;
         }
         img {
-          width: 100%;
-          height: 100%;
+          max-width: 100%;
+          height: auto;
           max-height: 220px;
           object-fit: scale-down;
           @include responsive("mobile") {
-            max-height: 300px;
+            min-height: 300px;
           }
         }
       }
