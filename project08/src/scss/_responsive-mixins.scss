@@ -20,8 +20,8 @@ $maxMax: 3000px;
     @media screen and (min-width: $minTablet) and (max-width: $maxTablet) {
       @content;
     }
-  } @else if $device == "mobToWeb" {
-    @media screen and (min-width: $minMobile) and (max-width: $maxWeb) {
+  } @else if $device == "tabToWeb" {
+    @media screen and (min-width: $minTablet) and (max-width: $maxWeb) {
       @content;
     }
   } @else if $device == "web" {
