@@ -276,8 +276,8 @@ export const dev = gulp.series(
   // [prepare03, assets03, live03]
   // [prepare04, assets04, live04]
   // [prepare05, assets05, live05]
-  // [prepare06, assets06, live06]
+  [prepare06, assets06, live06]
   // [prepare07, assets07, live07]
   // [prepare08, assets08, live08]
-  [prepare09, assets09, live09]
+  // [prepare09, assets09, live09]
 );
