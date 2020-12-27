@@ -97,7 +97,6 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
-    // height: 500vh;
     .slide {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -106,8 +105,6 @@ body {
       @include responsive("mobile") {
         display: flex;
         flex-direction: column;
-        // grid-template-columns: 1fr;
-        // grid-template-rows: minmax(550px, 1fr) 260px !important;
         height: 100vh;
         width: 100%;
       }
@@ -218,7 +215,6 @@ body {
     @include responsive("tablet") {
       grid-template-columns: repeat(3, 1fr);
       grid-auto-flow: dense;
-      // transition: all 3s ease-in-out;
     }
     @include responsive("mobile") {
       grid-template-columns: 1fr 1fr;
@@ -227,6 +223,12 @@ body {
     .prod__item {
       width: 100%;
       height: 100%;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        opacity: 0.4;
+        filter: blur(1px);
+      }
       img {
         width: 100%;
         height: 100%;
@@ -251,6 +253,10 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    @include responsive("mobile") {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
     .nav__column {
       color: white;
       font-family: "Heebo", sans-serif;
@@ -260,6 +266,9 @@ body {
       flex-direction: column;
       justify-content: flex-start;
       line-height: 1.8rem;
+      @include responsive("mobile") {
+        padding: 20px 30px 20px 30px;
+      }
       .nav__title {
         color: rgba(255, 255, 255, 0.5);
       }
@@ -269,7 +278,7 @@ body {
     display: flex;
     align-items: flex-end;
     position: absolute;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     bottom: 0;
   }
   .logo-img {
