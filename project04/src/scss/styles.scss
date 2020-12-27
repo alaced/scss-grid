@@ -33,6 +33,7 @@ body {
   display: grid;
   grid-template-columns: 2fr 1fr;
   background-color: white;
+  z-index: 100;
   @include responsive("mobile") {
     grid-template-columns: 1fr 1fr;
   }
@@ -86,8 +87,6 @@ body {
     }
     @include responsive("mobile") {
       font-size: 24px;
-      // padding-bottom: 12px;
-      // padding-top: 10px;
     }
     .logo {
       padding: 8.5px 0px;
@@ -137,6 +136,10 @@ body {
       cursor: pointer;
       .img {
         width: 100%;
+        transition: opacity 0.3s ease-in-out;
+        &:hover {
+          opacity: 0.5;
+        }
       }
       img {
         width: 100%;
@@ -153,17 +156,23 @@ body {
       cursor: pointer;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      align-items: center;
+      align-items: stretch;
       @include responsive("mobile") {
         grid-template-columns: 1fr 1fr;
         font-size: 12px;
+        align-items: stretch;
       }
       .desc__title {
         grid-column-start: 1;
         padding-right: 10px;
         justify-self: end;
+        display: flex;
+        align-items: center;
         @include responsive("mobile") {
           justify-self: center;
+          font-size: 0.6rem;
+          text-align: center;
+          line-height: 0.75rem;
         }
       }
       .desc__btn {
@@ -171,10 +180,16 @@ body {
         padding-left: 10px;
         display: flex;
         align-items: center;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: black;
+          color: white;
+        }
         @include responsive("mobile") {
           grid-column-start: 2;
           justify-content: center;
           padding: 0px;
+          font-size: 0.8rem;
         }
         span {
           font-size: 22px;
@@ -185,11 +200,6 @@ body {
     }
   }
 }
-
-// .header-change {
-//   color: black;
-//   transition: all 0.2s ease-in-out;
-// }
 
 .none {
   display: none;

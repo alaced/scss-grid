@@ -171,10 +171,14 @@ body {
     height: 80vh;
     display: flex;
     justify-content: center;
+
     iframe {
       margin: 0px auto;
-      width: 65%;
+      width: 70%;
       height: 100%;
+      @include responsive("mobNtab") {
+        width: 90%;
+      }
     }
   }
   .slide {
@@ -210,6 +214,9 @@ body {
 }
 
 .footer {
+  @include responsive("mobNtab") {
+    padding: 10px 0px;
+  }
   .nav {
     margin: 45px;
     border: 1px solid black;
